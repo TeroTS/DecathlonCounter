@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kymppilaskuri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{=URL('static', 'css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{=URL('static', 'css/bootstrap-responsive.css')}}" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+        background-color:#FFFFFF;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+      
+	  span.tab { padding: 0 3px; }
+		
+      input[name*='name'] { width: 50px; text-align: center; }
+      input[name*='points'] { width: 50px; text-align: center; }
+      input[name='year'] { width: 75px; text-align: center; }
+      
+      .table {
+        width: auto;
+      }
+      
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+    
+  </head>
+
+  <body>
+	<script src="{{=URL('static','js/jquery.js')}}"></script>
+	<script src="{{=URL('static','js/bootstrap.js')}}"></script>	
+    <!-- <script src="{{=URL('static','js/jquery.cookie.js')}}"></script> -->
+    
+    <div class="container">
+ 
+  	<div class="hero-unit">
+ 		 <font color="#2B60DE"><h1 class="text-center">RiMa Kymppilaskuri</h1></font>
+    </div>  
+       
+      <div class="row-fluid">
+      <div class="span4"></div>
+      <div class="container">
+          <ul class="nav nav-tabs" id="top">
+            <li><a href="#laskuri" data-toggle="tab">Laskuri</a></li>
+            <li><a href="#yhteistulos" data-toggle="tab">Yhteistulos</a></li>
+            <li><a href="#aam" data-toggle="tab">AAM</a></li>
+            <li><a href="#muut" data-toggle="tab">Muut Tulokset</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane" id="laskuri">
+              <div class="container">
+                <div class="tabbable tabs-left">
+                  <ul class="nav nav-tabs" id="laskuri">
+                    <li><a href="#osallistujat" data-toggle="tab">Osallistujat</a></li>
+                    <li><a href="#aidat" data-toggle="tab">110m-aidat</a></li>
+                    <li><a href="#pituus" data-toggle="tab">Pituus</a></li>
+                    <li><a href="#kuula" data-toggle="tab">Kuula</a></li>
+                    <li><a href="#satanen" data-toggle="tab">100m</a></li>
+                    <li><a href="#seivas" data-toggle="tab">Seiväs</a></li>
+                    <li><a href="#neljasataa" data-toggle="tab">400m</a></li>
+                    <li><a href="#korkeus" data-toggle="tab">Korkeus</a></li>
+                    <li><a href="#kiekko" data-toggle="tab">Kiekko</a></li>
+                    <li><a href="#keihas" data-toggle="tab">Keihas</a></li>
+                    <li><a href="#tuhatviisisataa" data-toggle="tab">1500m</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane" id="osallistujat">{{=athletesInputForm}}</div>
+                    <div class="tab-pane" id="aidat">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(s)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>
+                    {{=eventForm[0]}}
+                    </div>
+                    <div class="tab-pane" id="pituus">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(m)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[1]}}
+                    </div>
+                    <div class="tab-pane" id="kuula">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(m)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[2]}}
+                    </div>
+                    <div class="tab-pane" id="satanen">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(s)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[3]}}
+                    </div>
+                    <div class="tab-pane" id="seivas">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(m)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[4]}}
+                    </div>
+                    <div class="tab-pane" id="neljasataa">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(s)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[5]}}
+                    </div>
+                    <div class="tab-pane" id="korkeus">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(m)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[6]}}
+                    </div>
+                    <div class="tab-pane" id="kiekko">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(m)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[7]}}</div>
+                    <div class="tab-pane" id="keihas">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(m)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[8]}}
+                    </div>
+                    <div class="tab-pane" id="tuhatviisisataa">
+                      <table border="0" cellspacing="0">
+                        <tr>
+                          <th scope="col"><div align="left">Nimi</div></th>
+                          <th scope="col"><div align="center"><span class="tab"></span>Tulos(s)</div></th>
+                          <th scope="col"><div align="right"><span class="tab"></span>Pisteet</div></th>
+                        </tr>
+                      </table>                    
+                    {{=eventForm[9]}}
+                    </div>                
+                  </div>
+                </div><!-- tabbable tabs-left -->
+              </div> <!-- container -->
+            </div> <!--tab-pane" id="laskuri" -->
+            <div class="tab-pane" id="yhteistulos"><div class="span3"><p><b>Anna vuosi:</b></p>{{=compoundForm}}</div>
+                <div class="span3">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Nimi</th>
+                          <th>Tulos</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {{for idx, row in enumerate(session.rowsOverall):}}
+                        <tr>
+                          <td>{{=idx+1}}.</td>
+                          <td>{{=row.name}}</td>
+                          <td>{{=row.score}}</td>
+                        </tr>
+                      {{pass}}
+                      </tbody>
+                    </table>
+                </div>        
+            </div>
+            <div class="tab-pane" id="aam"><div class="span3"><p><b>Anna vuosi:</b></p>{{=aamForm}}</div>
+                <div class="span3">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Nimi</th>
+                          <th>Tulos</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {{for idx, row in enumerate(session.rowsAam):}}
+                        <tr>
+                          <td>{{=idx+1}}.</td>
+                          <td>{{=row.name}}</td>
+                          <td>{{=row.aam}}</td>
+                        </tr>
+                      {{pass}}
+                      </tbody>
+                    </table>           
+                </div>
+            </div>
+            <div class="tab-pane" id="muut">
+              <div class="container">
+                <div class="tabbable tabs-left">
+                  <ul class="nav nav-tabs" id="muut">
+                    <li><a href="#vanhat_tulokset" data-toggle="tab">Vanhat Tulokset</a></li>
+                    <li><a href="#ennätykset" data-toggle="tab">Ennätykset</a></li>
+                     <li><a href="#trendit" data-toggle="tab">Trendit</a></li>
+                  </ul>
+                  <div class="tab-content">                  
+                    <div class="tab-pane" id="vanhat_tulokset"><div class="span2"><p><b>Anna vuosi:</b></p>{{=oldResultsForm}}</div>
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Nimi</th>
+                                  <th>110m-aidat</th>
+                                  <th>Pituus</th>
+                                  <th>Kuula</th>
+                                  <th>100m</th>
+                                  <th>Seiväs</th>
+                                  <th>400m</th>
+                                  <th>Korkeus</th>
+                                  <th>Kiekko</th>
+                                  <th>Keihäs</th>
+                                  <th>1500m</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                              {{for idx, name in enumerate(session.oldNames):}}
+                                <tr>
+                                  <td>{{=name}}</td>
+                                  <td>{{=session.oldAidat[idx]}}</td>
+                                  <td>{{=session.oldPituus[idx]}}</td>
+                                  <td>{{=session.oldKuula[idx]}}</td>
+                                  <td>{{=session.oldSatanen[idx]}}</td>
+                                  <td>{{=session.oldSeivas[idx]}}</td>
+                                  <td>{{=session.oldNeljasataa[idx]}}</td>
+                                  <td>{{=session.oldKorkeus[idx]}}</td>
+                                  <td>{{=session.oldKiekko[idx]}}</td>
+                                  <td>{{=session.oldKeihas[idx]}}</td>
+                                  <td>{{=session.oldTuhatviisisataa[idx]}}</td>
+                                </tr>
+                              {{pass}}
+                              </tbody>
+                            </table>
+                    </div>                 
+                    <div class="tab-pane" id="ennätykset"><div class="span2"></div>
+                        <div class="span3">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th>Laji</th>
+                                  <th>Nimi</th>
+                                  <th>Tulos</th>
+                                  <th>Pisteet</th>
+                                  <th>Vuosi</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>110m-aidat</td>
+                                  <td>{{=session.nameAidat.name}}</td>
+                                  <td>{{=session.recordAidat.result}}</td>
+                                  <td>{{=session.recordAidat.points}}</td>
+                                  <td>{{=session.nameAidat.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Pituus</td>
+                                  <td>{{=session.namePituus.name}}</td>
+                                  <td>{{=session.recordPituus.result}}</td>
+                                  <td>{{=session.recordPituus.points}}</td>
+                                  <td>{{=session.namePituus.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Kuula</td>
+                                  <td>{{=session.nameKuula.name}}</td>
+                                  <td>{{=session.recordKuula.result}}</td>
+                                  <td>{{=session.recordKuula.points}}</td>
+                                  <td>{{=session.nameKuula.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>100m</td>
+                                  <td>{{=session.nameSatanen.name}}</td>
+                                  <td>{{=session.recordSatanen.result}}</td>
+                                  <td>{{=session.recordSatanen.points}}</td>
+                                  <td>{{=session.nameSatanen.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Seiväs</td>
+                                  <td>{{=session.nameSeivas.name}}</td>
+                                  <td>{{=session.recordSeivas.result}}</td>
+                                  <td>{{=session.recordSeivas.points}}</td>
+                                  <td>{{=session.nameSeivas.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>400m</td>
+                                  <td>{{=session.nameNeljasataa.name}}</td>
+                                  <td>{{=session.recordNeljasataa.result}}</td>
+                                  <td>{{=session.recordNeljasataa.points}}</td>
+                                  <td>{{=session.nameNeljasataa.year}}</td>
+                                </tr>   
+                                <tr>
+                                  <td>Korkeus</td>
+                                  <td>{{=session.nameKorkeus.name}}</td>
+                                  <td>{{=session.recordKorkeus.result}}</td>
+                                  <td>{{=session.recordKorkeus.points}}</td>
+                                  <td>{{=session.nameKorkeus.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Kiekko</td>
+                                  <td>{{=session.nameKiekko.name}}</td>
+                                  <td>{{=session.recordKiekko.result}}</td>
+                                  <td>{{=session.recordKiekko.points}}</td>
+                                  <td>{{=session.nameKiekko.year}}</td>
+                                </tr>
+                                <tr>
+                                  <td>Keihäs</td>
+                                  <td>{{=session.nameKeihas.name}}</td>
+                                  <td>{{=session.recordKeihas.result}}</td>
+                                  <td>{{=session.recordKeihas.points}}</td>
+                                  <td>{{=session.nameKeihas.year}}</td>
+                                </tr> 
+                                <tr>
+                                  <td>1500m</td>
+                                  <td>{{=session.nameTuhatviisisataa.name}}</td>
+                                  <td>{{=session.recordTuhatviisisataa.result}}</td>
+                                  <td>{{=session.recordTuhatviisisataa.points}}</td>
+                                  <td>{{=session.nameTuhatviisisataa.year}}</td>
+                                </tr>                            
+                              </tbody>
+                            </table>
+                        </div>        
+                    </div>                                      
+                    <div class="tab-pane" id="trendit">{{=figuresForm}}<embed src="http://127.0.0.1:8000/test_app/static/images/graph_0.png" type="image/png"/><embed src="http://127.0.0.1:8000/test_app/static/images/graph_1.png" type="image/png"/><embed src="http://127.0.0.1:8000/test_app/static/images/graph_2.png" type="image/png"/></div>
+                  </div>
+                </div><!-- tabbable tabs-left -->
+              </div> <!-- container -->
+            </div> <!--tab-pane" id="muut" -->            
+          
+ <!--------------------------------------------------->                        
+          </div> <!-- "tab-content" -->
+      </div> <!-- "container" -->
+      </div> <!-- "row-fluid" -->
+      
+      <hr>
+
+      <div class="footer">
+        <p>&copy; TSProduction 2013</p>
+      </div>
+      
+        <!-- Set the last selected tab active when page reload (=persistent tabs) -->
+        <script type="text/javascript">    
+        $(function() {
+          var json, tabsState;
+          $('a[data-toggle="pill"], a[data-toggle="tab"]').on('shown', function(e) {
+            var href, json, parentId, tabsState;
+
+            tabsState = localStorage.getItem("tabs-state");
+            json = JSON.parse(tabsState || "{}");
+            parentId = $(e.target).parents("ul.nav.nav-pills, ul.nav.nav-tabs").attr("id");
+            href = $(e.target).attr('href');
+            json[parentId] = href;
+
+            return localStorage.setItem("tabs-state", JSON.stringify(json));
+          });
+
+          tabsState = localStorage.getItem("tabs-state");
+          json = JSON.parse(tabsState || "{}");
+
+          $.each(json, function(containerId, href) {
+            return $("#" + containerId + " a[href=" + href + "]").tab('show');
+          });
+
+          $("ul.nav.nav-pills, ul.nav.nav-tabs").each(function() {
+            var $this = $(this);
+            if (!json[$this.attr("id")]) {
+              return $this.find("a[data-toggle=tab]:first, a[data-toggle=pill]:first").tab("show");
+            }
+          });
+        });
+        </script>
+        
+    </div> <!-- /container -->
+
+  </body>
+</html>
+
